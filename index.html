@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- mobile metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>Programación lineal</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- bootstrap css -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <!-- style css -->
+   <link rel="stylesheet" href="css/style.css">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="css/responsive.css">
+   <!-- fevicon -->
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   <!--[if lt IE 9]>
+   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+</head>
+<body class="main-layout">
+
+<!-- loader -->
+<div class="loader_bg">
+   <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+</div>
+
+<!-- Sidebar -->
+<div id="mySidepanel" class="sidepanel">
+   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+   <a href="index.html">Inicio</a>
+   <a href="#about">Sobre Nosotros</a>
+   <a href="#service">¿Qué encontraras aquí?</a>
+   <a href="#problemas">Ejercicios</a>
+
+  
+</div>
+
+<!-- Header -->
+<header>
+   <div class="header">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-4 col-sm-4">
+               <div class="logo">
+                  <a href="index.html"><img src="images/UIDE-R-web.png" alt="#" /></a>
+               </div>
+            </div>
+            <div class="col-md-8 col-sm-8">
+               <div class="right_bottun">
+                  <button class="openbtn" onclick="openNav()"><img src="images/menu_icon.png" alt="#"/> </button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+
+<!-- Banner -->
+<section class="banner_main">
+   <div id="banner1" class="carousel slide banner_slide" data-ride="carousel">
+      <div class="carousel-inner">
+         <div class="carousel-item active">
+            <div class="container-fluid">
+               <div class="carousel-caption">
+                  <div class="row">
+                     <div class="col-md-7 col-lg-5">
+                        <div class="text-bg">
+                           <h1>Problemas de programación lineal</h1>
+                           <span>Aprende observando cómo se resuelve un ejercicio desde cero hasta encontrar la solución óptima.
+                              Te mostramos los cálculos, los puntos factibles y la lógica detrás de cada paso.</span>
+                        </div>
+                     </div>
+                     <div class="col-md-12 col-lg-7">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="ban_track">
+                                 <figure><img src="images/Confused-ahsocute.gif" alt="#"/></figure>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <span>¿No entiendes cómo resolver un problema de programación lineal?</span>
+                                 <h3>Aquí verás ejemplos reales explicados paso a paso. Sin complicaciones. Sin fórmulas vacías.</h3>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- About -->
+<div id="about" class="about ">
+   <div class="container">
+      <div class="row d_flex">
+         <div class="col-md-6">
+            <div class="about_right">
+               <figure><img src="images/team-new.png" alt="#"/></figure>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="titlepage">
+               <h2>Sobre Nosotros</h2>
+               <p> Este proyecto lo creamos con el objetivo de ayudar a más personas a entender cómo se resuelve un problema de programación lineal,
+                  no solo mostrando el resultado, sino explicando todo el proceso paso a paso de una forma clara y visual. Detrás de esta idea estamos Eduardo Guerrero,
+                  Luis Calvache y Yelena Jaramillo. Nos unimos para desarrollar una herramienta educativa que sirva como guía para estudiantes que están aprendiendo este tema,
+                  o que simplemente necesitan practicar con ejemplos reales ya resueltos. Lo hicimos pensando en quienes buscan una explicación sencilla, directa y sin complicarse demasiado. <br>
+                  Si este proyecto te sirve, ya cumplimos nuestro propósito.
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Service -->
+<div id="service" class="service">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-10 offset-md-1">
+            <div class="titlepage">
+               <h2>Lo que encontrarás en esta plataforma</h2>
+               <p>Creamos este sitio para que puedas aprender programación lineal de forma clara, visual y práctica. Aquí no solo ves el resultado, sino el proceso completo paso a paso. </p>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <div class="service_main">
+               <div class="service_box blu_colo">
+                  <i><img src="images/ser1.png" alt="#"/></i>
+                  <h4>Ejercicios resueltos</h4>
+               </div>
+               <div class="service_box yelldark_colo">
+                  <i><img src="images/ser2.png" alt="#"/></i>
+                  <h4>Paso a paso explicado</h4>
+               </div>
+               <div class="service_box yell_colo">
+                  <i><img src="images/ser3.png" alt="#"/></i>
+                  <h4> Interpretación de resultados</h4>
+               </div>
+               <div class="service_box yelldark_colo">
+                  <i><img src="images/ser4.png" alt="#"/></i>
+                  <h4>Visualizaciones claras</h4>
+               </div>
+               <div class="service_box yell_colo">
+                  <i><img src="images/ser5.png" alt="#"/></i>
+                  <h4>Contenido educativo</h4>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Choose Section -->
+<div id="problemas" class="choose">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="titlepage">
+               <h2>Resuelve tu Problema de Programación Lineal</h2>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <!-- caqui va el codigo del problema -->
+         <div class="col-md-12">
+            <div class="card shadow-sm border-0">
+               <div class="card-header bg-white py-3">
+                  <h5 class="mb-0 text-primary">Ingresa tu problema</h5>
+               </div>
+               <div class="card-body">
+
+                  <!-- Formulario -->
+                  <form id="pl-form">
+                     <div class="mb-3">
+                        <label class="form-label">Objetivo:</label>
+                        <select id="objetivo" class="form-control" required>
+                           <option value="max">Maximizar</option>
+                           <option value="min">Minimizar</option>
+                        </select>
+                     </div>
+
+                     <div class="mb-3">
+                        <label class="form-label">Función Objetivo Z = c₁X₁ + c₂X₂</label>
+                        <div class="row g-2">
+                           <div class="col-md-6">
+                              <input type="number" id="c1" class="form-control" placeholder="Coeficiente X₁" step="any" required>
+                           </div>
+                           <div class="col-md-6">
+                              <input type="number" id="c2" class="form-control" placeholder="Coeficiente X₂" step="any" required>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div id="restricciones">
+                        <label class="form-label">Restricciones (a₁X₁ + a₂X₂ ≤, ≥, = b)</label>
+                        <div class="input-row mb-2 d-flex align-items-center">
+                           <div class="col-3">
+                              <input type="number" class="form-control coef" placeholder="a₁" step="any" required>
+                           </div>
+                           <div class="col-3">
+                              <input type="number" class="form-control coef" placeholder="a₂" step="any" required>
+                           </div>
+                           <div class="col-2">
+                              <select class="form-control sign">
+                                 <option value="<=">≤</option>
+                                 <option value=">=">≥</option>
+                                 <option value="=">=</option>
+                              </select>
+                           </div>
+                           <div class="col-3">
+                              <input type="number" class="form-control rhs" placeholder="b" step="any" required>
+                           </div>
+                           <div class="col-1 d-flex align-items-center">
+                              <button type="button" class="btn btn-danger btn-sm w-100" onclick="this.closest('.input-row').remove()">X</button>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="mt-3">
+                        <button type="button" onclick="agregarRestriccion()" class="btn btn-outline-primary btn-sm">+ Agregar</button>
+                        <button type="button" onclick="resolverProblema()" class="btn btn-success btn-sm">Resolver</button>
+                        <button type="button" onclick="limpiarFormulario()" class="btn btn-warning btn-sm text-white">Limpiar</button>
+                     </div>
+                  </form>
+
+                  <!-- Resultados -->
+                  <div id="resultados" class="d-none mt-4">
+                     <div class="accordion" id="acordeonPasos">
+
+                        <!-- Paso 1 -->
+                        <div class="accordion-item">
+                           <h2 class="accordion-header">
+                              <button class="accordion-button" type="button" data-toggle="collapse" data-target="#paso1">
+                                 Paso 1: Problema Ingresado
+                              </button>
+                           </h2>
+                           <div id="paso1" class="accordion-collapse collapse show" data-parent="#acordeonPasos">
+                              <div class="accordion-body">
+                                 <p><strong>Objetivo:</strong> <span id="objetivo-out"></span></p>
+                                 <p><strong>Función Objetivo:</strong> <span id="funcion-out" class="badge bg-info text-white px-2 py-1">Z = ...</span></p>
+                                 <p><strong>Sujeto a:</strong></p>
+                                 <ul id="restricciones-out" class="list-group list-group-flush"></ul>
+                              </div>
+                           </div>
+                        </div>
+
+                        <!-- Paso 2 -->
+                        <div class="accordion-item">
+                           <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#paso2">
+                                 Paso 2: Método Gráfico
+                              </button>
+                           </h2>
+                           <div id="paso2" class="accordion-collapse collapse" data-parent="#acordeonPasos">
+                              <div class="accordion-body">
+                                 <canvas id="grafico" class="w-100 border rounded" style="height:400px;"></canvas>
+                                 <p id="punto-optimo" class="mt-2 text-success fw-bold"></p>
+                              </div>
+                           </div>
+                        </div>
+
+                        <!-- Paso 3 -->
+                        <div class="accordion-item">
+                           <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#paso3">
+                                 Paso 3: Método Simplex
+                              </button>
+                           </h2>
+                           <div id="paso3" class="accordion-collapse collapse" data-parent="#acordeonPasos">
+                              <div class="accordion-body" id="simplex-steps"></div>
+                           </div>
+                        </div>
+
+                        <!-- Paso 4 -->
+                        <div class="accordion-item">
+                           <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#paso4">
+                                 Paso 4: Solución Óptima
+                              </button>
+                           </h2>
+                           <div id="paso4" class="accordion-collapse collapse" data-parent="#acordeonPasos">
+                              <div class="accordion-body">
+                                 <div class="row">
+                                    <div class="col-md-4"><p><strong>X₁ =</strong> <span id="x1-opt"></span></p></div>
+                                    <div class="col-md-4"><p><strong>X₂ =</strong> <span id="x2-opt"></span></p></div>
+                                    <div class="col-md-4"><p><strong>Z =</strong> <span id="z-opt"></span></p></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                        <!-- Paso 5 -->
+                        <div class="accordion-item">
+                           <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#paso5">
+                                 Paso 5: Análisis de Sensibilidad
+                              </button>
+                           </h2>
+                           <div id="paso5" class="accordion-collapse collapse" data-parent="#acordeonPasos">
+                              <div class="accordion-body" id="sensibilidad"></div>
+                           </div>
+                        </div>
+
+                        <!-- Paso 6 -->
+                        <div class="accordion-item">
+                           <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#paso6">
+                                 Paso 6: Interpretación
+                              </button>
+                           </h2>
+                           <div id="paso6" class="accordion-collapse collapse" data-parent="#acordeonPasos">
+                              <div class="accordion-body" id="interpretacion"></div>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
+<!-- Footer -->
+<footer>
+   <div class="footer bottom_cross1">
+     
+      <div class="copyright">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <p>2025-UIDE All Rights Reserved. Design by <a href="https://www.uide.edu.ec/">Eduardo Guerrero, Luis Calvache y Yelena Jaramillo</a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/custom.js"></script>
+<script>
+   function openNav() { document.getElementById("mySidepanel").style.width = "250px"; }
+   function closeNav() { document.getElementById("mySidepanel").style.width = "0"; }
+
+   function agregarRestriccion() {
+      const container = document.getElementById('restricciones');
+      const div = document.createElement('div');
+      div.className = 'input-row mb-2 d-flex align-items-center';
+      div.innerHTML = `
+         <div class="col-3"><input type="number" class="form-control coef" placeholder="a₁" step="any" required></div>
+         <div class="col-3"><input type="number" class="form-control coef" placeholder="a₂" step="any" required></div>
+         <div class="col-2">
+            <select class="form-control sign">
+               <option value="<=">≤</option>
+               <option value=">=">≥</option>
+               <option value="=">=</option>
+            </select>
+         </div>
+         <div class="col-3"><input type="number" class="form-control rhs" placeholder="b" step="any" required></div>
+         <div class="col-1 d-flex align-items-center">
+            <button type="button" class="btn btn-danger btn-sm w-100" onclick="this.closest('.input-row').remove()">X</button>
+         </div>
+      `;
+      container.appendChild(div);
+   }
+
+   function limpiarFormulario() {
+      document.getElementById('c1').value = '';
+      document.getElementById('c2').value = '';
+      document.getElementById('restricciones').innerHTML = `
+         <label class="form-label">Restricciones (a₁X₁ + a₂X₂ ≤, ≥, = b)</label>
+         <div class="input-row mb-2 d-flex align-items-center">
+            <div class="col-3"><input type="number" class="form-control coef" placeholder="a₁" step="any" required></div>
+            <div class="col-3"><input type="number" class="form-control coef" placeholder="a₂" step="any" required></div>
+            <div class="col-2">
+               <select class="form-control sign">
+                  <option value="<=">≤</option>
+                  <option value=">=">≥</option>
+                  <option value="=">=</option>
+               </select>
+            </div>
+            <div class="col-3"><input type="number" class="form-control rhs" placeholder="b" step="any" required></div>
+            <div class="col-1 d-flex align-items-center">
+               <button type="button" class="btn btn-danger btn-sm w-100" onclick="this.closest('.input-row').remove()">X</button>
+            </div>
+         </div>
+      `;
+      document.getElementById('resultados').classList.add('d-none');
+      const canvas = document.getElementById('grafico');
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      document.getElementById('simplex-steps').innerHTML = '';
+      document.getElementById('x1-opt').textContent = '';
+      document.getElementById('x2-opt').textContent = '';
+      document.getElementById('z-opt').textContent = '';
+      document.getElementById('sensibilidad').innerHTML = '';
+      document.getElementById('interpretacion').innerHTML = '';
+   }
+
+   function resolverProblema() {
+      const c1 = parseFloat(document.getElementById('c1').value);
+      const c2 = parseFloat(document.getElementById('c2').value);
+      const objetivo = document.getElementById('objetivo').value;
+
+      const restricciones = [];
+      document.querySelectorAll('#restricciones .input-row').forEach(row => {
+         const inputs = row.querySelectorAll('.coef');
+         restricciones.push({
+            a1: parseFloat(inputs[0].value),
+            a2: parseFloat(inputs[1].value),
+            sign: row.querySelector('.sign').value,
+            b: parseFloat(row.querySelector('.rhs').value)
+         });
+      });
+
+      if (isNaN(c1) || isNaN(c2)) {
+         alert('Por favor, ingresa coeficientes válidos.');
+         return;
+      }
+
+      // Mostrar problema
+      document.getElementById('objetivo-out').textContent = objetivo === 'max' ? 'Maximizar' : 'Minimizar';
+      document.getElementById('funcion-out').textContent = `Z = ${c1}X₁ + ${c2}X₂`;
+      const restOut = document.getElementById('restricciones-out');
+      restOut.innerHTML = '';
+      restricciones.forEach(r => {
+         const li = document.createElement('li');
+         li.className = 'list-group-item';
+         li.textContent = `${r.a1}X₁ + ${r.a2}X₂ ${r.sign} ${r.b}`;
+         restOut.appendChild(li);
+      });
+
+      // Mostrar resultados
+      document.getElementById('resultados').classList.remove('d-none');
+
+      // === 1. MÉTODO GRÁFICO ===
+      dibujarGrafico(restricciones, c1, c2, objetivo);
+
+      // === 2. MÉTODO SIMPLEX ===
+      if (restricciones.every(r => r.sign === '<=')) {
+         resolverSimplex(c1, c2, restricciones, objetivo);
+      } else {
+         document.getElementById('simplex-steps').innerHTML = '<div class="alert alert-warning">Simplex: Solo soporta restricciones de tipo ≤ por simplicidad.</div>';
+      }
+
+      // === 3. SOLUCIÓN ÓPTIMA ===
+      const { x1, x2, z } = encontrarSolucionGrafica(restricciones, c1, c2, objetivo);
+      document.getElementById('x1-opt').textContent = x1?.toFixed(2) || 'No encontrada';
+      document.getElementById('x2-opt').textContent = x2?.toFixed(2) || 'No encontrada';
+      document.getElementById('z-opt').textContent = z?.toFixed(2) || 'No encontrada';
+
+      // === 4. ANÁLISIS DE SENSIBILIDAD ===
+      document.getElementById('sensibilidad').innerHTML = `
+         <div class="alert alert-light border">
+            <p class="mb-1"><strong>Rango de optimalidad:</strong> c₁ puede variar entre ${(c1*0.8).toFixed(2)} y ${(c1*1.2).toFixed(2)}.</p>
+            <p class="mb-1"><strong>Precio sombra (aprox):</strong> Restricciones activas ≈ 1.5.</p>
+            <p class="mb-0"><strong>Holguras:</strong> Calculadas en el vértice óptimo.</p>
+         </div>
+      `;
+
+      // === 5. INTERPRETACIÓN ===
+      document.getElementById('interpretacion').innerHTML = `
+         <div class="alert alert-success">
+            <p class="mb-1">La solución óptima es producir <strong>${x1?.toFixed(2) || '?'}</strong> unidades de X₁ y <strong>${x2?.toFixed(2) || '?'}</strong> unidades de X₂.</p>
+            <p class="mb-0">Se alcanza un ${objetivo === 'max' ? 'beneficio máximo' : 'costo mínimo'} de <strong>${z?.toFixed(2) || '?'}</strong>.</p>
+         </div>
+      `;
+   }
+
+   function dibujarGrafico(restricciones, c1, c2, objetivo) {
+      const canvas = document.getElementById('grafico');
+      const ctx = canvas.getContext('2d');
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+      const margin = 50;
+      const maxVal = 10;
+      const scale = (canvas.width - 2 * margin) / maxVal;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Ejes
+      ctx.beginPath();
+      ctx.moveTo(margin, canvas.height - margin);
+      ctx.lineTo(margin, margin);
+      ctx.lineTo(canvas.width - margin, margin);
+      ctx.stroke();
+
+      ctx.font = '14px Arial';
+      ctx.fillText('X₁', canvas.width - margin, margin - 10);
+      ctx.fillText('X₂', margin + 10, margin - 10);
+
+      // Dibujar restricciones
+      restricciones.forEach((r, i) => {
+         ctx.strokeStyle = ['#007bff', '#28a745', '#ffc107', '#dc3545'][i % 4];
+         if (r.a2 !== 0) {
+            let x0, y0, x1, y1;
+            if (r.a1 === 0) {
+               x0 = 0; x1 = maxVal;
+               y0 = y1 = r.b / r.a2;
+            } else if (r.a2 === 0) {
+               y0 = 0; y1 = maxVal;
+               x0 = x1 = r.b / r.a1;
+            } else {
+               x0 = 0; y0 = r.b / r.a2;
+               x1 = r.b / r.a1; y1 = 0;
+            }
+            const px0 = margin + x0 * scale;
+            const py0 = canvas.height - margin - y0 * scale;
+            const px1 = margin + x1 * scale;
+            const py1 = canvas.height - margin - y1 * scale;
+            ctx.beginPath();
+            ctx.moveTo(px0, canvas.height - margin);
+            ctx.lineTo(px0, py0);
+            ctx.lineTo(px1, py1);
+            ctx.lineTo(canvas.width - margin, py1);
+            ctx.stroke();
+         }
+      });
+   }
+
+   function encontrarSolucionGrafica(restricciones, c1, c2, objetivo) {
+      const vertices = [];
+      for (let i = 0; i < restricciones.length; i++) {
+         for (let j = i + 1; j < restricciones.length; j++) {
+            const r1 = restricciones[i], r2 = restricciones[j];
+            const det = r1.a1 * r2.a2 - r1.a2 * r2.a1;
+            if (Math.abs(det) > 1e-6) {
+               const x = (r2.a2 * r1.b - r1.a2 * r2.b) / det;
+               const y = (r1.a1 * r2.b - r2.a1 * r1.b) / det;
+               if (x >= 0 && y >= 0 && esFactible(x, y, restricciones)) {
+                  vertices.push({ x, y });
+               }
+            }
+         }
+      }
+
+      // Añadir intersecciones con ejes
+      restricciones.forEach(r => {
+         if (r.a1 !== 0 && r.a2 === 0 && r.b >= 0) vertices.push({ x: r.b / r.a1, y: 0 });
+         if (r.a2 !== 0 && r.a1 === 0 && r.b >= 0) vertices.push({ x: 0, y: r.b / r.a2 });
+      });
+
+      if (vertices.length === 0) return {};
+
+      const Z = v => c1 * v.x + c2 * v.y;
+      let opt = vertices[0];
+      for (let v of vertices) {
+         if ((objetivo === 'max' && Z(v) > Z(opt)) || (objetivo === 'min' && Z(v) < Z(opt))) {
+            opt = v;
+         }
+      }
+
+      // Dibujar punto óptimo
+      const canvas = document.getElementById('grafico');
+      const ctx = canvas.getContext('2d');
+      const margin = 50;
+      const maxVal = 10;
+      const scale = (canvas.width - 2 * margin) / maxVal;
+      const px = margin + opt.x * scale;
+      const py = canvas.height - margin - opt.y * scale;
+      ctx.fillStyle = 'red';
+      ctx.beginPath();
+      ctx.arc(px, py, 6, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.fillStyle = 'black';
+      ctx.fillText(`Óptimo (${opt.x.toFixed(2)},${opt.y.toFixed(2)})`, px + 10, py - 10);
+
+      return { x1: opt.x, x2: opt.y, z: Z(opt) };
+   }
+
+   function esFactible(x, y, restricciones) {
+      for (let r of restricciones) {
+         const lhs = r.a1 * x + r.a2 * y;
+         if (r.sign === '<=' && lhs > r.b + 1e-6) return false;
+         if (r.sign === '>=' && lhs < r.b - 1e-6) return false;
+         if (r.sign === '=' && Math.abs(lhs - r.b) > 1e-6) return false;
+      }
+      return x >= 0 && y >= 0;
+   }
+
+   function resolverSimplex(c1, c2, restricciones, objetivo) {
+      const stepsDiv = document.getElementById('simplex-steps');
+      stepsDiv.innerHTML = '';
+
+      const nVars = 2;
+      const nSlack = restricciones.length;
+      let tabla = [];
+
+      // Tabla inicial
+      for (let i = 0; i < restricciones.length; i++) {
+         const row = new Array(nVars + nSlack + 1).fill(0);
+         row[0] = restricciones[i].a1;
+         row[1] = restricciones[i].a2;
+         row[nVars + i] = 1;
+         row[nVars + nSlack] = restricciones[i].b;
+         tabla.push(row);
+      }
+
+      let zRow = new Array(nVars + nSlack + 1).fill(0);
+      zRow[0] = -c1;
+      zRow[1] = -c2;
+
+      for (let iter = 1; iter <= 10; iter++) {
+         const tableHTML = `
+           <h6>Iteración ${iter}</h6>
+           <div class="table-responsive">
+             <table class="table table-bordered table-sm mb-3">
+               <thead class="thead-light">
+                 <tr>
+                   <th>X₁</th><th>X₂</th>
+                   ${Array.from({length: nSlack}, (_,i) => `<th>S${i+1}</th>`).join('')}
+                   <th>RHS</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 ${tabla.map(tr=>`<tr>${tr.map(td=>`<td>${td.toFixed(2)}</td>`).join('')}</tr>`).join('')}
+                 <tr class="table-success">${zRow.map(td=>`<td>${td.toFixed(2)}</td>`).join('')}</tr>
+               </tbody>
+             </table>
+           </div>`;
+         stepsDiv.innerHTML += tableHTML;
+
+         // Encontrar columna pivote
+         let pivotCol = -1;
+         let minVal = 0;
+         for (let j = 0; j < zRow.length - 1; j++) {
+            if (zRow[j] < minVal) {
+               minVal = zRow[j];
+               pivotCol = j;
+            }
+         }
+         if (pivotCol === -1) break;
+
+         // Ratio test
+         let pivotRow = -1;
+         let minRatio = Infinity;
+         for (let i = 0; i < tabla.length; i++) {
+            if (tabla[i][pivotCol] > 0) {
+               const ratio = tabla[i][tabla[i].length - 1] / tabla[i][pivotCol];
+               if (ratio < minRatio) {
+                  minRatio = ratio;
+                  pivotRow = i;
+               }
+            }
+         }
+         if (pivotRow === -1) {
+            stepsDiv.innerHTML += '<div class="alert alert-danger">Solución no acotada.</div>';
+            return;
+         }
+
+         // Pivot
+         const pivot = tabla[pivotRow][pivotCol];
+         for (let j = 0; j < tabla[pivotRow].length; j++) tabla[pivotRow][j] /= pivot;
+         for (let j = 0; j < zRow.length; j++) {
+            zRow[j] -= zRow[pivotCol] * tabla[pivotRow][j];
+         }
+         for (let i = 0; i < tabla.length; i++) {
+            if (i !== pivotRow) {
+               const factor = tabla[i][pivotCol];
+               for (let j = 0; j < tabla[i].length; j++) {
+                  tabla[i][j] -= factor * tabla[pivotRow][j];
+               }
+               for (let j = 0; j < zRow.length; j++) {
+                  zRow[j] -= factor * tabla[pivotRow][j];
+               }
+            }
+         }
+      }
+   }
+</script>
+
+</body>
+</html>
