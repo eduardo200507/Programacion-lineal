@@ -543,55 +543,92 @@
       });
    }
 
-   function encontrarSolucionGrafica(restricciones, c1, c2, objetivo) {
-      const vertices = [];
-      for (let i = 0; i < restricciones.length; i++) {
-         for (let j = i + 1; j < restricciones.length; j++) {
-            const r1 = restricciones[i], r2 = restricciones[j];
-            const det = r1.a1 * r2.a2 - r1.a2 * r2.a1;
-            if (Math.abs(det) > 1e-6) {
-               const x = (r2.a2 * r1.b - r1.a2 * r2.b) / det;
-               const y = (r1.a1 * r2.b - r2.a1 * r1.b) / det;
-               if (x >= 0 && y >= 0 && esFactible(x, y, restricciones)) {
-                  vertices.push({ x, y });
-               }
-            }
+  
+
+
+function encontrarSolucionGrafica(restricciones, c1, c2, objetivo) {
+   const vertices = [];
+   const eps = 1e-6; // Tolerancia para comparaciones con decimales
+
+   // 1. Encontrar intersecciones entre pares de restricciones
+   for (let i = 0; i < restricciones.length; i++) {
+      for (let j = i + 1; j < restricciones.length; j++) {
+         const r1 = restricciones[i], r2 = restricciones[j];
+         const det = r1.a1 * r2.a2 - r1.a2 * r2.a1;
+
+         // Si las rectas son paralelas, no hay intersección
+         if (Math.abs(det) < eps) continue;
+
+         // Calcular punto de intersección
+         const x = (r2.a2 * r1.b - r1.a2 * r2.b) / det;
+         const y = (r1.a1 * r2.b - r2.a1 * r1.b) / det;
+
+         // Verificar si el punto es factible (cumple todas las restricciones)
+         if (x >= -eps && y >= -eps && esFactible(x, y, restricciones)) {
+            vertices.push({ x, y });
          }
       }
+   }
 
-      // Añadir intersecciones con ejes
-      restricciones.forEach(r => {
-         if (r.a1 !== 0 && r.a2 === 0 && r.b >= 0) vertices.push({ x: r.b / r.a1, y: 0 });
-         if (r.a2 !== 0 && r.a1 === 0 && r.b >= 0) vertices.push({ x: 0, y: r.b / r.a2 });
-      });
-
-      if (vertices.length === 0) return {};
-
-      const Z = v => c1 * v.x + c2 * v.y;
-      let opt = vertices[0];
-      for (let v of vertices) {
-         if ((objetivo === 'max' && Z(v) > Z(opt)) || (objetivo === 'min' && Z(v) < Z(opt))) {
-            opt = v;
+   // 2. Añadir intersecciones con ejes (si son factibles)
+   for (const r of restricciones) {
+      // Intersección con eje X₁ (y = 0)
+      if (r.a1 !== 0) {
+         const x = r.b / r.a1;
+         if (x >= -eps && esFactible(x, 0, restricciones)) {
+            vertices.push({ x, y: 0 });
          }
       }
+      // Intersección con eje X₂ (x = 0)
+      if (r.a2 !== 0) {
+         const y = r.b / r.a2;
+         if (y >= -eps && esFactible(0, y, restricciones)) {
+            vertices.push({ x: 0, y });
+         }
+      }
+   }
 
-      // Dibujar punto óptimo
-      const canvas = document.getElementById('grafico');
+   // 3. Si no hay vértices factibles
+   if (vertices.length === 0) {
+      console.warn("No se encontraron vértices factibles.");
+      return {};
+   }
+
+   // 4. Encontrar el vértice óptimo
+   const Z = v => c1 * v.x + c2 * v.y;
+   let opt = vertices[0];
+   let zOpt = Z(opt);
+
+   for (let v of vertices) {
+      const z = Z(v);
+      if ((objetivo === 'max' && z > zOpt + eps) || (objetivo === 'min' && z < zOpt - eps)) {
+         opt = v;
+         zOpt = z;
+      }
+   }
+
+   // 5. Dibujar punto óptimo en el gráfico
+   const canvas = document.getElementById('grafico');
+   if (canvas) {
       const ctx = canvas.getContext('2d');
       const margin = 50;
-      const maxVal = 10;
+      const maxVal = Math.max(10, opt.x * 1.2, opt.y * 1.2); // Ajustar escala
       const scale = (canvas.width - 2 * margin) / maxVal;
+
       const px = margin + opt.x * scale;
       const py = canvas.height - margin - opt.y * scale;
+
       ctx.fillStyle = 'red';
       ctx.beginPath();
       ctx.arc(px, py, 6, 0, 2 * Math.PI);
       ctx.fill();
       ctx.fillStyle = 'black';
-      ctx.fillText(`Óptimo (${opt.x.toFixed(2)},${opt.y.toFixed(2)})`, px + 10, py - 10);
-
-      return { x1: opt.x, x2: opt.y, z: Z(opt) };
+      ctx.fillText(`Óptimo (${opt.x.toFixed(2)}, ${opt.y.toFixed(2)})`, px + 10, py - 10);
    }
+
+   return { x1: opt.x, x2: opt.y, z: zOpt };
+}
+
 
    function esFactible(x, y, restricciones) {
       for (let r of restricciones) {
